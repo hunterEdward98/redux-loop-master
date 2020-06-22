@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 const feedbackreducer = (state = [], action) => {
     let newState = state;
-    //testing which form we are submitting to global state
+    //testing which form we are submitting to global state, based on the action type it dispatches
     if (action.type === 'HOW_FEELING') {
         newState = {
             ...state,
@@ -34,10 +34,12 @@ const feedbackreducer = (state = [], action) => {
     }
     return newState
 }
+//creating out store instance, setting a value to our form's current state
 const storeInstance = createStore(
     combineReducers({
         feedbackreducer
     })
 )
+//rendering our app inside a Provider containing our store instance
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

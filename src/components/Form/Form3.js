@@ -11,15 +11,18 @@ class Form3 extends React.Component {
     state = {
         currentVal: ''
     }
+    //when it initializes, set local state to global
     componentDidMount = () => {
         this.setState({
             currentVal: this.props.feedback.understanding
         })
     }
+    //when you leave the page, set global state to local
     componentWillUnmount = () => {
         const dispatch = this.props.dispatch;
         dispatch({ type: 'UNDERSTANDING', payload: this.state.currentVal });
     }
+    //store your changes to the input field in local state
     handleChange = (event) => {
         this.setState({
             currentVal: event.target.value
@@ -42,6 +45,7 @@ class Form3 extends React.Component {
         )
     }
 }
+//get props from global state
 const setPropsToState = (state) => {
     return {
         feedback: state.feedbackreducer

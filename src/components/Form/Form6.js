@@ -72,6 +72,7 @@ class Form extends React.Component {
         )
     }
 }
+//get props from global state
 const setPropsToState = (state) => {
     return {
         feedback: state.feedbackreducer

@@ -26,6 +26,7 @@ class Form extends React.Component {
                         confirmButtonText: 'Yes, delete it!',
                     }).then((result) => {
                         if (result) {
+                            axios.post('/feedback', this.props.feedback)
                             this.props.history.push('/')
                             swal(
                                 'Submitted',

@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
     const val3 = req.body.support;
     const val4 = req.body.comments;
     //server sending 500. no time to fix
-    let queryText = 'INSERT INTO feedback (feeling,understanding, support, comments) VALUES($1,$2,$3,$4)';
+    let queryText = 'INSERT INTO feedback (feeling, understanding, support, comments) VALUES($1,$2,$3,$4)';
     pool.query(queryText, [val1, val2, val3, val4]).then((response) => {
         res.sendStatus(201);
     }).catch((error) => {

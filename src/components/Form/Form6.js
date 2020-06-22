@@ -15,7 +15,8 @@ class Form extends React.Component {
             <FormControl noValidate autoComplete="off">
                 <form onSubmit={(event) => {
                     event.preventDefault()
-                    //tell the user their forms are going to be submitted
+                    //tell the user their forms are going to be submitted. if they hit yes, submit and reser to '/'
+                    //otherwise cancel the submission
                     swal({
                         dangerMode: true,
                         buttons: true,

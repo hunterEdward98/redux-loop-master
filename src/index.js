@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 const feedbackreducer = (state = [], action) => {
     let newState = state;
+    //testing which form we are submitting to global state
     if (action.type === 'HOW_FEELING') {
         newState = {
             ...state,

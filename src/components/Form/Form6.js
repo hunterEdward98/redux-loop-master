@@ -15,6 +15,7 @@ class Form extends React.Component {
             <FormControl noValidate autoComplete="off">
                 <form onSubmit={(event) => {
                     event.preventDefault()
+                    //tell the user their forms are going to be submitted
                     swal({
                         dangerMode: true,
                         buttons: true,
@@ -28,11 +29,9 @@ class Form extends React.Component {
                         if (result) {
                             axios.post('/feedback', this.props.feedback)
                             this.props.history.push('/')
-                            swal(
-                                'Submitted',
+                            swal('Submitted',
                                 'Your feedback was submitted',
-                                'success'
-                            )
+                                'success')
                         }
                         else {
                             swal(
